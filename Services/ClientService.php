@@ -44,28 +44,29 @@ class ClientService
     }
 
     public function connect() {
-        try {
+        if(@fsockopen($this->jrs_host,$this->jrs_port)){
         	$url = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://" . $this->jrs_host . ":" . $this->jrs_port . "/" . $this->jrs_base ;
             $this->jasperClient = new Client($url, $this->jrs_username, $this->jrs_password, $this->jrs_org_id);
             $this->jasperClient->setRequestTimeout(60); 
+
             $this->connected = true;
-        } catch (\Exception $e) {
+        } else {
             $this->connected = false;
-            throw $e;
         }
 
         return $this->connected;
     }
 
-    public function isConnected() {
-        return $this->connected;
-    }
-
     public function export($format,$params,$reportUnit)
 	{
+		if(!$this->isConnected()){
+			$response = new Response("Not currently connected to the Report Server");
+			return $response;
+		}
+
 		if(isset($format)){
 			$reportService = $this->jasperClient->reportService();
-			
+
 			switch($format){
 				case 'pdf':
 					$report = $reportService->runReport($reportUnit, $format, null, null, $params);
@@ -89,6 +90,10 @@ class ClientService
 		return $response;
 
 	}
+
+	public function isConnected() {
+        return $this->connected;
+    }
 
     ////////////////////////
     // GETTERS AND SETTER //
