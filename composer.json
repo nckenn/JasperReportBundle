@@ -3,7 +3,7 @@
     "description" : "Symfony 3 Bundle integrating the Jasper Server(community edition) REST v2 client (Jaspersoft/jrs-rest-php-client)",
     "type" : "symfony-bundle",
     "authors" : [{
-        "name" : "Kenneth Roy Fetalino",
+        "name" : "Yoh Kenn",
         "email" : "aciekenn.personal@gmail.com"
     }],
     "keywords" : [
