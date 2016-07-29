@@ -14,8 +14,7 @@
         "MIT"
     ],
     "require" : {
-    	"php": ">=5.5.9",
-    	"jaspersoft/rest-client": "^2.0"
+    	"jaspersoft/rest-client": "v2.0.0"
     },
     "autoload" : {
         "psr-0" : {
