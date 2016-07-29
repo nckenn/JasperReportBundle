@@ -68,19 +68,35 @@ class ClientService
 			$reportService = $this->jasperClient->reportService();
 
 			switch($format){
-				case 'pdf':
+				case 'html':
 					$report = $reportService->runReport($reportUnit, $format, null, null, $params);
 					$response = new Response($report);
+					break;
+				case 'xlsx':
+				case 'xls':
+				case 'rtf':
+				case 'csv':
+				case 'odt':
+				case 'xml':
+				case 'docx':
+				case 'ods':
+				case 'pptx':
+				case 'pdf':
+					$disposition = ($format == 'pdf') ? "inline" : "attachment";
+
+					$report = $reportService->runReport($reportUnit, $format, null, null, $params);
+					$response = new Response($report);
+
 					$response->headers->set('Cache-Control', 'must-revalidate');
 					$response->headers->set('Pragma', 'public');
 					$response->headers->set('Content-Description', 'File Transfer');
-					$response->headers->set('Content-Disposition', 'inline; filename=report.'.$format);
+					$response->headers->set('Content-Disposition', $disposition.'; filename=report.'.$format);
 					$response->headers->set('Content-Transfer-Encoding', 'binary');
 					$response->headers->set('Content-Length', strlen($report));
-					$response->headers->set('Content-Type', 'application/pdf');
+					$response->headers->set('Content-Type', 'application/'.$format);
 					break;
 				default:
-					$response = new Response("Sorry file format ".$format." is not supported, use pdf instead.");
+					$response = new Response("Sorry file format ".$format." is not supported.");
 					break;
 			}
 		}else{
