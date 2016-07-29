@@ -1,7 +1,4 @@
 # JasperReportBundle
-Symfony 3 Bundle integrating the Jasper Server(community edition) REST v2 client (Jaspersoft/jrs-rest-php-client)
-
-# JasperReportBundle
 
 The JasperReportBundle requires jaspersoft/rest-client and provides an JasperReport-Client as service in the Symfony service container.
 
