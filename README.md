@@ -42,7 +42,7 @@ The JasperReportBundle requires jaspersoft/rest-client and provides an JasperRep
 
 ## Usage
 
-You can now access the <code>Client</code> object via the Symfony service <code>jasperreport.client</code>:
+You can now access the <code>Client</code> object via the Symfony service <code>yohkenn.jasper.report.client</code>:
 ```php
     $client = $this->get('yohkenn.jasper.report.client')->getJasperClient();
 ```
