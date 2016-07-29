@@ -1,0 +1,3 @@
+yoh_kenn_jasper_report_homepage:
+    path:     /
+    defaults: { _controller: YohKennJasperReportBundle:Default:index }

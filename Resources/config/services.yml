@@ -1,0 +1,7 @@
+services:
+#    yoh_kenn_jasper_report.example:
+#        class: YohKenn\JasperReportBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]
+    yohkenn.jasper.report.client:
+        class: YohKenn\JasperReportBundle\Services\ClientService
+        arguments: [ "@service_container" ]
