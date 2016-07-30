@@ -57,7 +57,7 @@ class ClientService
         return $this->connected;
     }
 
-    public function export($format,$params,$reportUnit)
+    public function export($filename,$format,$params,$reportUnit)
 	{
 		if(!$this->isConnected()){
 			$response = new Response("Not currently connected to the Report Server");
@@ -90,7 +90,7 @@ class ClientService
 					$response->headers->set('Cache-Control', 'must-revalidate');
 					$response->headers->set('Pragma', 'public');
 					$response->headers->set('Content-Description', 'File Transfer');
-					$response->headers->set('Content-Disposition', $disposition.'; filename=report.'.$format);
+					$response->headers->set('Content-Disposition', $disposition.'; filename='.$filename.'.'.$format);
 					$response->headers->set('Content-Transfer-Encoding', 'binary');
 					$response->headers->set('Content-Length', strlen($report));
 					$response->headers->set('Content-Type', 'application/'.$format);
