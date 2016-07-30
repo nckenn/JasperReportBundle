@@ -1,5 +1,5 @@
 {
-    "name" : "yohkenn/jasper-report-bundle",
+    "name" : "yohkenn/symfony-jasper-report-bundle",
     "description" : "Symfony 3 Bundle integrating the Jasper Server(community edition) REST v2 client (Jaspersoft/jrs-rest-php-client)",
     "type" : "symfony-bundle",
     "authors" : [{
