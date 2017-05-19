@@ -19,12 +19,12 @@ The JasperReportBundle requires jaspersoft/rest-client and provides an JasperRep
 3 Add parameter to <code>app/config/config.yml</code>
 ```yml
     yoh_jasper_report:
-	    jrs_host:      "%jrs_host%"
-	    jrs_port:      "%jrs_port%"
-	    jrs_base:      "%jrs_base%"
-	    jrs_username:  "%jrs_username%"
-	    jrs_password:  "%jrs_password%"
-	    jrs_org_id:    "%jrs_org_id%"
+        jrs_host:      "%jrs_host%"
+        jrs_port:      "%jrs_port%"
+        jrs_base:      "%jrs_base%"
+        jrs_username:  "%jrs_username%"
+        jrs_password:  "%jrs_password%"
+        jrs_org_id:    "%jrs_org_id%"
 ```
 4 Add a dummy configuration in <code>app/config/parameters.yml.dist</code>
 ```yml
