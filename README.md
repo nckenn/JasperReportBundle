@@ -6,7 +6,7 @@ The JasperReportBundle requires jaspersoft/rest-client and provides an JasperRep
 
 1 Add bundle to <code>composer.json</code>:
 ```shel
-    composer require yoh/jasper-report-bundle
+    composer require yoh/symfony-jasper-report-bundle
 ```
 2 Register bundle in <code>app/AppKernel.php</code>:
 ```php
