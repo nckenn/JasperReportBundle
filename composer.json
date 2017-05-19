@@ -1,0 +1,27 @@
+{
+    "name" : "yoh/symfony-jasper-report-bundle",
+    "description" : "Symfony 3 Bundle integrating the Jasper Server REST v2 client (Jaspersoft/rest-client)",
+    "type" : "symfony-bundle",
+    "authors" : [{
+        "name" : "Yoh Kenn",
+        "email" : "nckenn.developer@gmail.com"
+    }],
+    "keywords" : [
+        "JasperReport",
+        "Symfony3",
+        "bundle",
+        "REST"
+    ],
+    "license" : [
+        "MIT"
+    ],
+    "require" : {
+        "jaspersoft/rest-client": "^2.0"
+    },
+    "autoload" : {
+        "psr-0" : {
+            "Yoh\\JasperReportBundle" : ""
+        }
+    },
+    "target-dir" : "Yoh/JasperReportBundle"
+}
