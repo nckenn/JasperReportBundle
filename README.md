@@ -59,6 +59,6 @@ So a controller giving back a pdf-report would look like
             "Custom Label 2" => "Custom Value 2"
         );
 
-        return $this->get('yoh.jasper.report')->generate($reportUnit, $format, $parameters);
+        return $this->get('yoh.jasper.report')->generate($reportUnit, $format, $params);
     }
 ```
